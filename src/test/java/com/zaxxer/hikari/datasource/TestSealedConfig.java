@@ -15,7 +15,7 @@ public class TestSealedConfig
    @Test(expected = IllegalStateException.class)
    public void testSealed1() throws SQLException
    {
-      HikariConfig config = newHikariConfig();
+      HikariConfig config = new HikariConfig();
       config.setDataSourceClassName("com.zaxxer.hikari.mocks.StubDataSource");
 
       try (HikariDataSource ds = new HikariDataSource(config)) {
